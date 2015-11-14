@@ -9,8 +9,8 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Course Repository</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script>
      <script src="js/jquery-2.1.4.min.js"></script>
      <script src="js/script.js"></script>
@@ -21,12 +21,12 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<!--           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+            <span class="icon-bar">1</span>
+            <span class="icon-bar">2</span>
+            <span class="icon-bar">3sss</span>
+          </button> -->
          <a style="float:right" class="navbar-brand" href="#">Course Repository</a>
         </div>
         <div style="float:right" id="navbar" class="navbar-collapse collapse">
@@ -63,10 +63,10 @@
           </div>
           <div id="content">
           	<h3 class='sub-header'>Add a New Course</h3>
-			<input type='text' id='pid' class='form-control' placeholder='COURSE ID' aria-describedby='sizing-addon1'><br>
-			<input type='text' id='pname' class='form-control' placeholder='COURSE NAME' aria-describedby='sizing-addon1'><br>
-			<textarea id='price' class='form-control' rows='5' placeholder='COURSE DESCRIPTION' aria-describedby='sizing-addon1'></textarea><br>
- 			<button type='button' onclick='addProduct()' style='float:right' class='btn btn-default'>Save</button>
+			<input type='text' id='cid' class='form-control' placeholder='COURSE ID' aria-describedby='sizing-addon1'><br>
+			<input type='text' id='cname' class='form-control' placeholder='COURSE NAME' aria-describedby='sizing-addon1'><br>
+			<textarea id='cdesc' class='form-control' rows='5' placeholder='COURSE DESCRIPTION' aria-describedby='sizing-addon1'></textarea><br>
+ 			<button type='button' onclick='addCourse()' style='float:right' class='btn btn-default'>Save</button>
           </div>
         </div>
       </div>
