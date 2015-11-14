@@ -6,29 +6,38 @@ function sendRequest(u){
 }
 
 function addCourse(){
-	var c=$("#cid").val();
-	var n=$("#cname").val();
-	var d=$("#cdesc").val();
-				
-	var strUrl = "response.php?cmd=1&cid="+c+"&cname="+n+"&cdesc="+d;
-	var objResult=sendRequest(strUrl);
-	if(objResult.result==1){
-		var msg = "";
-    	msg += "<div class='alert alert-warning alert-dismissible' role='alert'>";
+	var msg = "";
+	if(($("#cid").val().length==0) || ($("#cname").val().length==0) || ($("#cdesc").val().length==0) ){
+		msg += "<div class='alert alert-warning alert-dismissible' role='alert'>";
     	msg += "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
     	msg += "<span aria-hidden='true'>&times;</span></button>";
-        msg += "Course Added Successfully.</div>";
+        msg += "Please enter values for all fields.</div>";
 	}else{
-		var msg = "";
-    	msg += "<div class='alert alert-warning alert-dismissible' role='alert'>";
-    	msg += "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
-    	msg += "<span aria-hidden='true'>&times;</span></button>";
-        msg += "Addition of course was unsuccessful.</div>";
+		var c=$("#cid").val();
+		var n=$("#cname").val();
+		var d=$("#cdesc").val();
+		
+		var strUrl = "response.php?cmd=1&cid="+c+"&cname="+n+"&cdesc="+d;
+		var objResult=sendRequest(strUrl);
+		if(objResult.result==1){
+			msg = "";			
+	    	msg += "<div class='alert alert-warning alert-dismissible' role='alert'>";
+	    	msg += "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+	    	msg += "<span aria-hidden='true'>&times;</span></button>";
+	        msg += "Course Added Successfully.</div>";
+
+			$("#cid").val("");
+			$("#cname").val("");
+			$("#cdesc").val("");
+		}else{
+			msg = "";
+	    	msg += "<div class='alert alert-warning alert-dismissible' role='alert'>";
+	    	msg += "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+	    	msg += "<span aria-hidden='true'>&times;</span></button>";
+	        msg += "Addition of course was unsuccessful.</div>";
+		}
 	}
 	$("#alert").html(msg);
-	$("#cid").val("");
-	$("#cname").val("");
-	$("#cdesc").val("");
 }
  
   
