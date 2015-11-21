@@ -54,7 +54,7 @@
         include("course.php");
         $obj=new course();
           
-        if($obj->ViewCourse()) {               
+        if($obj->viewCourse()) {               
             $row=$obj->fetch();
                 echo '{"result":1,"courses":[';    
                 while($row){
