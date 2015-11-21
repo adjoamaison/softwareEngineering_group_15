@@ -12,9 +12,13 @@
     switch($cmd)
     {
         case 1:     
-            add();  
+            addCourse();  
         break;
- 
+        
+        case 2:     
+            viewCourse();  
+        break;
+
         default:
             echo '{"result":0,"message":"unknown command"}';
         break;
@@ -25,7 +29,7 @@
  * course to the database. It echos a json with result being 1 when successful 
  * or 0 if query failed
  */
-    function add(){
+    function addCourse(){
         $cid = $_REQUEST["cid"];
         $cname = $_REQUEST["cname"];
         $desc = $_REQUEST["cdesc"];
@@ -39,4 +43,30 @@
             echo '{"result":0}';        
         }
     }
+
+/**
+ * description: A function that takes parameters from a given url to add a new
+ * course to the database. It echos a json with result being 1 when successful 
+ * or 0 if query failed
+ */
+    function viewCourse(){
+
+        include("course.php");
+        $obj=new course();
+          
+        if($obj->ViewCourse()) {               
+            $row=$obj->fetch();
+                echo '{"result":1,"courses":[';    
+                while($row){
+                    echo json_encode($row);         
+                    $row=$obj->fetch();
+                    if($row){
+                        echo ",";                   
+                    }
+                }
+                echo "]}";       
+            }else {
+            echo '{"result":0}';        
+        }
+    }    
 ?>

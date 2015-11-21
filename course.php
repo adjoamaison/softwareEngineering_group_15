@@ -19,10 +19,20 @@
  * @return An execution of the query to add to the database, 
  * returns true if successful and false if not
  */
-		function addCourse($cid, $cname, $desc){
-			$str_query = "insert into se_course set course_id='$cid', 
-				course_name='$cname', course_description='$desc'";
+	function addCourse($cid, $cname, $desc){
+		$str_query = "insert into se_course set course_id='$cid', 
+			course_name='$cname', course_description='$desc'";
+		return $this->query($str_query);
+	}
+
+/**
+ * description: A function to view all courses to the database
+ * @return An execution of the query to view to the database, 
+ * returns true if successful and false if not
+ */
+		function viewCourse(){
+			$str_query = "select * from se_course";
 			return $this->query($str_query);
-		}
+		}		
 	}
 ?>
