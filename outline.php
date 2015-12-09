@@ -13,5 +13,10 @@
 				reviewed='$review'";
 			return $this->query($str_query);
 		}
+
+		function submitOutline($cid){
+			$str_query="UPDATE course_outline SET submitted='true' WHERE courseid='$cid'";
+			return $this->query($str_query);
+		}
 	}
 ?>
