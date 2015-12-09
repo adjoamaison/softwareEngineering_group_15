@@ -16,17 +16,11 @@
      <script src="js/script.js"></script>
   </head>
 
-  <body>
+  <body onload="viewCourse()">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-<!--           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">1</span>
-            <span class="icon-bar">2</span>
-            <span class="icon-bar">3sss</span>
-          </button> -->
          <a style="float:right" class="navbar-brand" href="#">Course Repository</a>
         </div>
         <div style="float:right" id="navbar" class="navbar-collapse collapse">
@@ -62,11 +56,7 @@
           	<button type="submit" class="btn btn-default">Departments</button>
           </div>
           <div id="content">
-          	<h3 class='sub-header'>Add a New Course</h3>
-			<input type='text' required id='cid' class='form-control' placeholder='COURSE ID' aria-describedby='sizing-addon1'><br>
-			<input type='text' required id='cname' class='form-control' placeholder='COURSE NAME' aria-describedby='sizing-addon1'><br>
-			<textarea id='cdesc' required class='form-control' rows='5' placeholder='COURSE DESCRIPTION' aria-describedby='sizing-addon1'></textarea><br>
- 			<button type='button' onclick='addCourse()' style='float:right' class='btn btn-default'>Save</button>
+          	
           </div>
         </div>
       </div>
