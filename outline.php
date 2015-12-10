@@ -7,15 +7,20 @@
  */
 	include_once("adb.php");
 	class outline extends adb{
-		function addOutline($cid,$did,$obj,$lg,$sid,$rid,$submit,$review){
-			$str_query = "insert into course_outline set courseid='$cid', departmentid='$did',
-				objective='$obj', goals='$lg', schedule_id='$sid', resource='$rid', submitted='$submit',
-				reviewed='$review'";
-			return $this->query($str_query);
+		function addOutline($oid,$cid,$obj,$lg,$sid,$rid){
+			$str_query = "insert into se_outline set outline_id='$oid',courseid='$cid',
+				objective='$obj', goals='$lg', schedule_id='$sid', resource='$rid'";
+ 			return $this->query($str_query);
 		}
 
 		function submitOutline($cid){
-			$str_query="UPDATE course_outline SET submitted='true' WHERE courseid='$cid'";
+			$str_query="UPDATE se_outline SET submitted='1' WHERE outline_id='$cid'";
+			return $this->query($str_query);
+		}
+
+		function addSchedule($id,$week, $topic, $reading){
+			$str_query="insert into se_schedule set outline_id='$id', week='$week',
+			 topic='$topic', assigned_reading='$reading'";
 			return $this->query($str_query);
 		}
 	}
