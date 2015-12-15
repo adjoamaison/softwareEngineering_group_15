@@ -1,9 +1,9 @@
-<?php   
+<?php
 /**
  * @author: Agatha Maison
  * date: 20th November 2015
  * description: A database class for all functions relating to the course outlines
- */ 
+ */
     if(!isset($_REQUEST['cmd'])){
         echo '{"result":0,message:"unknown command"}';
         exit();
@@ -11,12 +11,12 @@
     $cmd=$_REQUEST['cmd'];
     switch($cmd)
     {
-        case 1:     
-            addCourse();  
+        case 1:
+            addCourse();
         break;
-        
-        case 2:     
-            viewCourse();  
+
+        case 2:
+            viewCourse();
         break;
 
         default:
@@ -26,7 +26,7 @@
 
 /**
  * description: A function that takes parameters from a given url to add a new
- * course to the database. It echos a json with result being 1 when successful 
+ * course to the database. It echos a json with result being 1 when successful
  * or 0 if query failed
  */
     function addCourse(){
@@ -36,37 +36,62 @@
 
         include("course.php");
         $obj=new course();
-          
-        if($obj->addCourse($cid, $cname,$desc)) {               
-            echo '{"result":1}';        
+
+        if($obj->addCourse($cid, $cname,$desc)) {
+            echo '{"result":1}';
         }else {
-            echo '{"result":0}';        
+            echo '{"result":0}';
         }
     }
 
 /**
  * description: A function that takes parameters from a given url to add a new
- * course to the database. It echos a json with result being 1 when successful 
+ * course to the database. It echos a json with result being 1 when successful
  * or 0 if query failed
  */
     function viewCourse(){
 
         include("course.php");
         $obj=new course();
-          
-        if($obj->viewCourse()) {               
+
+        if($obj->viewCourse()) {
             $row=$obj->fetch();
-                echo '{"result":1,"courses":[';    
+                echo '{"result":1,"courses":[';
                 while($row){
-                    echo json_encode($row);         
+                    echo json_encode($row);
                     $row=$obj->fetch();
                     if($row){
-                        echo ",";                   
+                        echo ",";
                     }
                 }
-                echo "]}";       
+                echo "]}";
             }else {
-            echo '{"result":0}';        
+            echo '{"result":0}';
         }
-    }    
+    }
+
+  /**
+   * description: A helper function that generates a random id
+   */
+    function random_id($length = 4) {
+      $alphabets = range('A','Z');
+      $numbers = range('0','9');
+      $additional_characters = array('_','.');
+      $final_array = array_merge($alphabets,$numbers,$additional_characters);
+
+      $ran_id = '';
+
+      while($length--) {
+        $key = array_rand($final_array);
+        $ran_id .= $final_array[$key];
+      }
+         return $ran_id;
+    }
+
+  /**
+   * description: A function that takes parameters from a given url to add a new
+   * course outline to the database. It echos a json with result being 1 when successful 
+   * or 0 if query failed
+   */
+
 ?>
