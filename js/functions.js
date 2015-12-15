@@ -1,5 +1,5 @@
 var link = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/journal/welcome.php";
-var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/journal/create.php?";
+var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/requirement1/index.php?";
 var cart = [];
 var totalPrice = 0;
 
@@ -42,6 +42,20 @@ function create(){
         //better alert
         alert("not added");
         return;
+    }
+    //better alert
+    window.location.href = "base.html";
+}
+function login(){
+   var  user = $("#user").val();
+   var pass = $("#pass").val();
+
+    var strUrl = clink+"user="+user+"&pass="+pass;
+    var objResult = sendRequest(strUrl);
+    if(objResult.result == 0){
+        alert("Don't leave it blank");
+    }else if (objResult.result == 1){
+      alert("Wrong credentials")
     }
     //better alert
     window.location.href = "base.html";
