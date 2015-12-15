@@ -1,5 +1,5 @@
 var link = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/journal/welcome.php";
-var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/requirement1/index.php?";
+var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement1/home.php?";
 var cart = [];
 var totalPrice = 0;
 
@@ -10,19 +10,6 @@ function sendRequest(u) {
     return result;
 }
 
-$(function () {
-  $('#create').submit(function(e) {
-    e.preventDefault();
-    create();
-  });
-});
-
-$(function () {
-  $('#updateit').submit(function(e) {
-    e.preventDefault();
-    update();
-  });
-});
 
 $(function () {
   $('#attendance').submit(function(e) {
@@ -31,21 +18,6 @@ $(function () {
   });
 });
 
-
-function create(){
-   var  topic = $("#topic").val();
-   var thought = $("#thought").val();
-
-    var strUrl = clink+"topic="+topic+"&thought="+thought;
-    var objResult = sendRequest(strUrl);
-    if(objResult.result == 0){
-        //better alert
-        alert("not added");
-        return;
-    }
-    //better alert
-    window.location.href = "base.html";
-}
 function login(){
    var  user = $("#user").val();
    var pass = $("#pass").val();
@@ -56,7 +28,7 @@ function login(){
         alert("Don't leave it blank");
     }else if (objResult.result == 1){
       alert("Wrong credentials")
+    }else{
+      window.location.href = "test.html";
     }
-    //better alert
-    window.location.href = "base.html";
 }
