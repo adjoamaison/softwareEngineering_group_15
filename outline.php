@@ -7,9 +7,8 @@
  */
 	include_once("adb.php");
 	class outline extends adb{
-		function addOutline($oid,$cid,$obj,$lg,$sid,$rid){
-			$str_query = "insert into se_outline set outline_id='$oid',courseid='$cid',
-				objective='$obj', goals='$lg', schedule_id='$sid', resource='$rid'";
+		function addOutline($oid,$cid,$obje,$lg,$rid){
+			$str_query = "insert into se_outline set outline_id='$oid',courseid='$cid',	objective='$obje', goals='$lg', resource='$rid'";
  			return $this->query($str_query);
 		}
 
