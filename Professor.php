@@ -10,7 +10,11 @@ class Professor{
   @param - id
  @return - true
  */
-	public function editCourse(){
+<<<<<<< HEAD
+	public function editCourse($id){
+=======
+	public function editCourse($id){
+>>>>>>> bab167cccfbfc1163f60fce10742b510f2ecf618
 			$this->updateCourse($id, $get_title, $get_fac, $get_prof, $get_obj, $get_topic, $get_ref, $get_time, $get_pre, $get_assess);
 		}
 

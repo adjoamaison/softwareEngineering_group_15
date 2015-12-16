@@ -1,5 +1,5 @@
-var link = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/journal/welcome.php";
 var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement1/home.php?";
+var flink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement1/edit.php?";
 var cart = [];
 var totalPrice = 0;
 
@@ -30,5 +30,26 @@ function login(){
       alert("Wrong credentials")
     }else{
       window.location.href = "test.html";
+    }
+}
+
+function edit(){
+   var  id = $("#id").val();
+   var  title = $("#title").val();
+   var fac = $("#fac").val();
+   var  prof = $("#prof").val();
+   var obj = $("#obj").val();
+   var  topic = $("#top").val();
+   var ref = $("#ref").val();
+   var  time = $("#time").val();
+   var pre = $("#pre").val();
+   var  assess = $("#asses").val();
+
+    var strUrl = flink+"id="+id+"&title="+title+"&fac"+fac+"&prof="+prof+"&obj="+obj+"&topic="+topic+"&ref="+ref+"&time="+time+"&pref="+title+"&assess="+assess;
+    var objResult = sendRequest(strUrl);
+    if(objResult.result == 0){
+        alert("Update Failed");
+    }else
+      alert("Course Updated Successfully")
     }
 }
