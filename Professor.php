@@ -10,7 +10,7 @@ class Professor{
   @param - id
  @return - true
  */
-	public function editCourse(){
+	public function editCourse($id, $get_title, $get_fac, $get_prof, $get_obj, $get_topic, $get_ref, $get_time, $get_pre, $get_assess){
 			$this->updateCourse($id, $get_title, $get_fac, $get_prof, $get_obj, $get_topic, $get_ref, $get_time, $get_pre, $get_assess);
 		}
 
@@ -24,5 +24,6 @@ class Professor{
         where course_id = '$id'";
       return queryMysql($str_query);
     }
+  }
 
 ?>

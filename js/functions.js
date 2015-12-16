@@ -33,7 +33,7 @@ function login(){
     if(objResult.result == 0){
         alert("Don't leave it blank");
     }else if (objResult.result == 1){
-      alert("Wrong credentials")
+      alert("Wrong credentials");
     }else{
       window.location.href = "test.html";
     }
@@ -49,13 +49,13 @@ function edit(){
    var ref = $("#ref").val();
    var  time = $("#time").val();
    var pre = $("#pre").val();
-   var  assess = $("#asses").val();
+   var  assess = $("#assess").val();
 
-    var strUrl = flink+"id="+id+"&title="+title+"&fac"+fac+"&prof="+prof+"&obj="+obj+"&topic="+topic+"&ref="+ref+"&time="+time+"&pref="+title+"&assess="+assess;
+    var strUrl = flink+"id="+id+"&title="+title+"&fac="+fac+"&prof="+prof+"&obj="+obj+"&topic="+topic+"&ref="+ref+"&time="+time+"&pre="+pre+"&assess="+assess;
     var objResult = sendRequest(strUrl);
     if(objResult.result == 0){
         alert("Update Failed");
     }else{
-      alert("Course Updated Successfully")
+      alert("Course Updated Successfully");
     }
 }
