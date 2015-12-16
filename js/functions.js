@@ -1,5 +1,4 @@
-var clink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement1/home.php?";
-var flink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement1/edit.php?";
+var flink = "http://cs.ashesi.edu.gh/class2016/anthony-kwawu/Requirement3/edit.php?";
 var cart = [];
 var totalPrice = 0;
 
