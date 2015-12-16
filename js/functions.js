@@ -55,7 +55,7 @@ function edit(){
     var objResult = sendRequest(strUrl);
     if(objResult.result == 0){
         alert("Update Failed");
-    }else
+    }else{
       alert("Course Updated Successfully")
     }
 }
