@@ -17,7 +17,7 @@ $(function () {
   });
 });
 
-(function () {
+$(function () {
   $('#edit').submit(function(e) {
     e.preventDefault();
     edit();
