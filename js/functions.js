@@ -18,6 +18,13 @@ $(function () {
   });
 });
 
+(function () {
+  $('#edit').submit(function(e) {
+    e.preventDefault();
+    edit();
+  });
+});
+
 function login(){
    var  user = $("#user").val();
    var pass = $("#pass").val();
